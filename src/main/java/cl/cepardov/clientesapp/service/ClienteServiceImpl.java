@@ -3,10 +3,12 @@ package cl.cepardov.clientesapp.service;
 import cl.cepardov.clientesapp.entity.Cliente;
 import cl.cepardov.clientesapp.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Service
 public class ClienteServiceImpl implements ClienteService {
 
     @Autowired
