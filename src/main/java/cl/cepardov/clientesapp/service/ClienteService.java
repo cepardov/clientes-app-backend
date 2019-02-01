@@ -7,9 +7,9 @@ import java.util.List;
 public interface ClienteService {
     List<Cliente> findAll();
 
-    void save(Cliente cliente);
-
     Cliente findById(Long id);
 
-    void delete(Cliente cliente);
+    Cliente save(Cliente cliente);
+
+    void delete(Long id);
 }

@@ -21,12 +21,6 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    @Transactional
-    public void save(Cliente cliente) {
-        clienteRepository.save(cliente);
-    }
-
-    @Override
     @Transactional(readOnly = true)
     public Cliente findById(Long id) {
         return clienteRepository.findById(id).orElse(null);
@@ -34,8 +28,14 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     @Transactional
-    public void delete(Cliente cliente) {
-        clienteRepository.delete(cliente);
-
+    public Cliente save(Cliente cliente) {
+        return clienteRepository.save(cliente);
     }
+
+    @Override
+    @Transactional
+    public void delete(Long id) {
+        clienteRepository.deleteById(id);
+    }
+
 }
